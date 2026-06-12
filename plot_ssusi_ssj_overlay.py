@@ -370,7 +370,9 @@ def ensure_ssusi_files(
     if not files:
         raise SystemExit(
             f"{d.isoformat()} {sat.upper()} のSSUSI NetCDFがありません。\n"
-            f"JHU/APL公開サーバにその日の{sat.upper()}データがない、または現在サーバが利用できません。"
+            f"NASA SPDFアーカイブにその日の{sat.upper()}データがない、または現在サーバが利用できません。\n"
+            "（参考: SSUSIの公開アーカイブは2025年2月中旬まで。2024年以降のSSJは断続的で、"
+            "SSUSIと両方揃う最新時期は2024年5月です）"
         )
     return files
 

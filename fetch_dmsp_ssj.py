@@ -26,11 +26,13 @@ BASE_URL = "https://www.ncei.noaa.gov/data/dmsp-space-weather-sensors/access"
 ROOT = Path(__file__).resolve().parent / "data"
 
 # (sat, sensor_digit, valid_start, valid_end)
+# 注: 2024年以降のNCEIアーカイブは断続的（2024年は1月と5月、2025年は5月のみ等）。
+# valid_end は「これ以降は絶対ない」保証ではなく探索範囲の目安。ない日は404でスキップされる。
 SATS = [
     ("f15", "4", date(1999, 12, 17), date(2009,  3, 25)),
-    ("f16", "5", date(2003, 10, 24), date(2020, 12, 31)),
-    ("f17", "5", date(2006, 11,  7), date(2024,  1, 30)),
-    ("f18", "5", date(2009, 10, 21), date(2024,  1, 30)),
+    ("f16", "5", date(2003, 10, 24), date(2025, 12, 31)),
+    ("f17", "5", date(2006, 11,  7), date(2025, 12, 31)),
+    ("f18", "5", date(2009, 10, 21), date(2025, 12, 31)),
 ]
 
 
